@@ -1,0 +1,11 @@
+com/force/aus/erp/canvas/actions/HomePageAction.class
+com/force/aus/erp/canvas/comparators/SimpleObjectComparator.class
+com/force/aus/erp/canvas/entity/SimpleObject.class
+com/force/aus/erp/canvas/Main.class
+com/force/aus/erp/canvas/DataTool.class
+com/force/aus/erp/canvas/listeners/EMFListener.class
+com/force/aus/erp/canvas/actions/BaseOBMAction.class
+com/force/aus/erp/canvas/entity/Account.class
+com/force/aus/erp/canvas/AppProperties.class
+com/force/aus/erp/canvas/actions/GenericAction.class
+com/force/aus/erp/canvas/servlets/SimpleServlet.class
