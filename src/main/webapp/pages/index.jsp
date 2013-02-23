@@ -29,7 +29,7 @@
 <html>
 	<head>
 		<meta charset="utf-8" />
-		<title>Jetty Template</title>
+		<title>Put Some Canvas Here</title>
 		<link href="/css/template.css" rel="stylesheet" type="text/css" />
 		<link href="/images/favicon.ico" rel="icon" type="image/x-icon">
 		<script src="/js/jquery-1.7.1.min.js"></script>
