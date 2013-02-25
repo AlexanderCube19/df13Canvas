@@ -29,6 +29,12 @@
 			<artifactId>servlet-api</artifactId>
 			<version>2.5</version>
 		</dependency>
+		<!-- Jackson -->
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.0</version>
+		</dependency>
 		<!-- Struts 2 -->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
@@ -94,6 +100,35 @@
 			<artifactId>hibernate-entitymanager</artifactId>
 			<version>4.1.9.Final</version>
 		</dependency>
+
+		<!-- Need this for some of the JSON parsing in OAuthServlet -->
+		<dependency>
+			<groupId>org.json</groupId>
+			<artifactId>json</artifactId>
+			<version>20080701</version>
+		</dependency>
+
+		<!-- Needed for the proxy -->
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.1</version>
+			<exclusions>
+				<exclusion>
+					<groupId>commons-codec</groupId>
+					<artifactId>commons-codec</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+
+		<!-- Newer version of this is needed for thew Base64 Encoding -->
+		<dependency>
+			<groupId>commons-codec</groupId>
+			<artifactId>commons-codec</artifactId>
+			<version>1.4</version>
+		</dependency>
+
+
 	</dependencies>
 	<build>
 		<plugins>
