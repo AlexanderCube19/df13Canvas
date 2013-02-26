@@ -72,35 +72,49 @@ public class Main {
     	AppProperties.loadProperties();
         String webappDirLocation = "src/main/webapp/";
         
+        boolean heroku = false;
+        // A hacky way to determine if we are running on heroku or not
+        String basedir = (String)System.getProperty("basedir");
+        if (basedir != null && basedir.endsWith("/app/target")) {
+            heroku = true;
+        }
+        
+        System.setProperty("java.naming.factory.url","org.eclipse.jetty.jndi");
+		System.setProperty("java.naming.factory.initial","org.eclipse.jetty.jndi.InitialContextFactory");
+		
         //The port that we should run on can be set into an environment variable
         //Look for that variable and default to 8080 if it isn't there.
         String webPort = System.getenv("PORT");
         if(webPort == null || webPort.isEmpty()) {
             webPort = "8080";
-        }
-        
-        String sslPort = System.getenv("SSLPORT");
-        if(sslPort == null || sslPort.isEmpty()) {
-            sslPort = System.getenv("SSL_PORT");
-            if(sslPort == null || sslPort.isEmpty()) {
-                sslPort = "8443";
-            }
-        }
-        
-        System.setProperty("java.naming.factory.url","org.eclipse.jetty.jndi");
-		System.setProperty("java.naming.factory.initial","org.eclipse.jetty.jndi.InitialContextFactory");
-
+        }		
         Server server = new Server(Integer.valueOf(webPort));
-        SocketConnector connector = new SocketConnector();
-        connector.setPort(Integer.valueOf(webPort));
-
-        SslSocketConnector sslConnector = new SslSocketConnector();
-        sslConnector.setPort(Integer.valueOf(sslPort));
-        sslConnector.setKeyPassword("123456");
-        sslConnector.setKeystore("keystore");
-
-        server.setConnectors(new Connector[] { sslConnector, connector });        
         
+        if(!heroku) {
+        	LOG.info("Seems to be running locally, setup some SSL stuff");
+	        String sslPort = System.getenv("SSLPORT");
+	        if(sslPort == null || sslPort.isEmpty()) {
+	            sslPort = System.getenv("SSL_PORT");
+	            if(sslPort == null || sslPort.isEmpty()) {
+	                sslPort = "8443";
+	            }
+	        }
+
+
+	        SocketConnector connector = new SocketConnector();
+	        connector.setPort(Integer.valueOf(webPort));
+	
+	        SslSocketConnector sslConnector = new SslSocketConnector();
+	        sslConnector.setPort(Integer.valueOf(sslPort));
+	        sslConnector.setKeyPassword("123456");
+	        sslConnector.setKeystore("keystore");
+	
+	        server.setConnectors(new Connector[] { sslConnector, connector });        
+	        
+        } else {
+            // Heroku does it's own SSL piggyback thing
+            LOG.info("Looks like we are running on heroku.");
+        }
         WebAppContext root = new WebAppContext();
         root.setConfigurationClasses(configClasses);
         root.setContextPath("/");
