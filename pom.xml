@@ -46,6 +46,13 @@
 			<artifactId>struts-annotations</artifactId>
 			<version>1.0.5</version>
 		</dependency>
+		<!-- Apache Tiles (jsp templating) -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-tiles-plugin</artifactId>
+			<version>2.3.8</version>
+		</dependency>
+		<!-- Embedded Jetty -->
 		<dependency>
 			<groupId>org.eclipse.jetty</groupId>
 			<artifactId>jetty-servlet</artifactId>
@@ -77,7 +84,7 @@
 			<version>7.6.8.v20121106</version>
 		</dependency>
 
-		<!-- Logging -->
+		<!-- Simple Logging Framework -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -88,12 +95,14 @@
 			<artifactId>slf4j-simple</artifactId>
 			<version>1.7.2</version>
 		</dependency>
+
 		<!-- Postgres -->
 		<dependency>
 			<groupId>postgresql</groupId>
 			<artifactId>postgresql</artifactId>
 			<version>9.1-901.jdbc4</version>
 		</dependency>
+
 		<!-- ORM -->
 		<dependency>
 			<groupId>org.hibernate</groupId>
@@ -101,6 +110,7 @@
 			<version>4.1.9.Final</version>
 		</dependency>
 
+		<!-- Canvas specific artifacts -->
 		<!-- Need this for some of the JSON parsing in OAuthServlet -->
 		<dependency>
 			<groupId>org.json</groupId>

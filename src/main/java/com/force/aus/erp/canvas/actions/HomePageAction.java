@@ -40,7 +40,7 @@ import com.force.aus.erp.canvas.entity.SimpleObject;
  * @author tsellers@salesforce.com
  *
  */
-public class HomePageAction extends BaseOBMAction {
+public class HomePageAction extends BaseAction {
 
 	/**
 	 * serialVersionUID = -3644741437299668608L;

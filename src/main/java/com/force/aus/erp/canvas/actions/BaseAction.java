@@ -36,6 +36,7 @@ import org.apache.struts2.interceptor.SessionAware;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import com.force.aus.erp.canvas.CanvasRequest;
 import com.force.aus.erp.canvas.listeners.EMFListener;
 import com.opensymphony.xwork2.ActionSupport;
 
@@ -47,7 +48,7 @@ import com.opensymphony.xwork2.ActionSupport;
  * @author tsellers@salesforce.com
  * 
  */
-public abstract class BaseOBMAction extends ActionSupport implements SessionAware {
+public abstract class BaseAction extends ActionSupport implements SessionAware {
 
 	/**
 	 * 
@@ -60,6 +61,10 @@ public abstract class BaseOBMAction extends ActionSupport implements SessionAwar
 	private static String BREADCRUMB = "breadcrumb";
 	private String pageName;
 	private Map<String, Object> session;
+	
+	private String signed_request;
+	
+	private CanvasRequest canvasRequest;
 	
 	public String execute() {
 		logger = LoggerFactory.getLogger(this.getClass());
@@ -79,14 +84,12 @@ public abstract class BaseOBMAction extends ActionSupport implements SessionAwar
 		return action;
 	}
 
-	
+
 	
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
-
 
 	protected void buildBreadcrumb() {
 
@@ -177,6 +180,22 @@ public abstract class BaseOBMAction extends ActionSupport implements SessionAwar
 
 	}
 
+	/*
+	 * The signed request is processed and stored on the session
+	 * via a Struts Interceptor. 
+	 */
+	public void setSigned_request(String signed_request) {
+		this.signed_request = signed_request;
+	}
+	
+	public void setCanvasRequest(CanvasRequest canvasRequest) {
+		this.canvasRequest = canvasRequest;
+	}
+	
+	public CanvasRequest getCanvasRequest() {
+		return this.canvasRequest;
+	}
+	
 	protected void resetBreadcrumb() {
 		breadcrumb = new ArrayList<String>();
 		breadcrumb.add(getPageName());

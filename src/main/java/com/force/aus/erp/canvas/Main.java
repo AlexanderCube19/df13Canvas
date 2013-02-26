@@ -31,7 +31,10 @@ import java.net.URISyntaxException;
 import javax.naming.NamingException;
 
 import org.eclipse.jetty.plus.jndi.Resource;
+import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;
+import org.eclipse.jetty.server.bio.SocketConnector;
+import org.eclipse.jetty.server.ssl.SslSocketConnector;
 import org.eclipse.jetty.webapp.WebAppContext;
 import org.postgresql.ds.PGSimpleDataSource;
 import org.slf4j.Logger;
@@ -76,10 +79,28 @@ public class Main {
             webPort = "8080";
         }
         
+        String sslPort = System.getenv("SSLPORT");
+        if(sslPort == null || sslPort.isEmpty()) {
+            sslPort = System.getenv("SSL_PORT");
+            if(sslPort == null || sslPort.isEmpty()) {
+                sslPort = "8443";
+            }
+        }
+        
         System.setProperty("java.naming.factory.url","org.eclipse.jetty.jndi");
 		System.setProperty("java.naming.factory.initial","org.eclipse.jetty.jndi.InitialContextFactory");
 
         Server server = new Server(Integer.valueOf(webPort));
+        SocketConnector connector = new SocketConnector();
+        connector.setPort(Integer.valueOf(webPort));
+
+        SslSocketConnector sslConnector = new SslSocketConnector();
+        sslConnector.setPort(Integer.valueOf(sslPort));
+        sslConnector.setKeyPassword("123456");
+        sslConnector.setKeystore("keystore");
+
+        server.setConnectors(new Connector[] { sslConnector, connector });        
+        
         WebAppContext root = new WebAppContext();
         root.setConfigurationClasses(configClasses);
         root.setContextPath("/");

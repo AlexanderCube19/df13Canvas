@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+  <definition name="home.tiles" template="/templates/template.jsp">
+      <put-attribute name="title"  value="Search"/>
+      <put-attribute name="mainContent" value="/pages/home.jsp"/>
+  </definition>
+  <definition name="search.tiles" template="/templates/template.jsp">
+      <put-attribute name="title"  value="Search"/>
+      <put-attribute name="mainContent" value="/pages/search.jsp"/>
+  </definition>
+  <definition name="display.tiles" template="/templates/template.jsp">
+      <put-attribute name="title"  value="Display Canvas"/>
+      <put-attribute name="mainContent" value="/pages/displayCanvas.jsp"/>
+  </definition>  
+</tiles-definitions>

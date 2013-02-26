@@ -45,7 +45,7 @@ public class CanvasContext {
     private CanvasOrganizationContext orgContext = null;
     private CanvasLinkContext linkContext = null;
     private CanvasEnvironmentContext envContext = null;
-
+    
     
     /**
      * Provides the context about the current user.

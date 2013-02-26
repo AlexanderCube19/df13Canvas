@@ -10,6 +10,8 @@ public class AppProperties {
 	public static String DEV_DBASE_URL = "dev.dbase.url";
 	public static String PROPS_FILE = "app.properties";
 	public static String MESSAGE_TIMEZONE = "dbase.date.timezone";
+	public static String CANVAS_APP_SECRET = "canvas.app.secret";
+	
 	private static Logger logger;
 	
 	public static Properties props;
