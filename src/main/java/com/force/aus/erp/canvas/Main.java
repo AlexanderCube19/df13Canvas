@@ -74,8 +74,8 @@ public class Main {
         
         boolean heroku = false;
         // A hacky way to determine if we are running on heroku or not
-        String basedir = (String)System.getProperty("DATABASE_URL");
-        if (basedir != null) {
+        String databaseURL = System.getenv("DATABASE_URL") ;
+        if (databaseURL != null && !databaseURL.isEmpty()) {
             heroku = true;
         }
         
