@@ -72,8 +72,8 @@ Canvas Request:
     				<li>
     					<ul>
     						<li>System Version</li>
-    						<li>API : <s:property value="canvasRequest.context.environmentContext.version.api"/></li>
-    						<li>Season : <s:property value="canvasRequest.context.environmentContext.version.season"/></li>
+    						<li>API : <s:property value="canvasRequest.context.environmentContext.systemVersion.api"/></li>
+    						<li>Season : <s:property value="canvasRequest.context.environmentContext.systemVersion.season"/></li>
     					</ul>
     				</li>
 				</ul>
