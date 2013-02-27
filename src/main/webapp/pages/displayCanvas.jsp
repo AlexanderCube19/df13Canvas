@@ -60,20 +60,20 @@ Canvas Request:
 			<li>
 				<ul>
 					<li>Environment Context</li>
-					<li>Location URL : <s:property value="canvasRequest.context.envContext.locationUrl"/></li>
-    				<li>UI Theme : <s:property value="canvasRequest.context.envContext.uiTheme"/></li>
+					<li>Location URL : <s:property value="canvasRequest.context.environmentContext.locationUrl"/></li>
+    				<li>UI Theme : <s:property value="canvasRequest.context.environmentContext.uiTheme"/></li>
     				<li>
     					<ul>
     						<li>Dimensions</li>
-    						<li>Width : <s:property value="canvasRequest.context.envContext.dimensions.width"/></li>
-    						<li>Height : <s:property value="canvasRequest.context.envContext.dimensions.height"/></li>
+    						<li>Width : <s:property value="canvasRequest.context.environmentContext.dimensions.width"/></li>
+    						<li>Height : <s:property value="canvasRequest.context.environmentContext.dimensions.height"/></li>
     					</ul>
     				</li>
     				<li>
     					<ul>
     						<li>System Version</li>
-    						<li>API : <s:property value="canvasRequest.context.envContext.version.api"/></li>
-    						<li>Season : <s:property value="canvasRequest.context.envContext.version.season"/></li>
+    						<li>API : <s:property value="canvasRequest.context.environmentContext.version.api"/></li>
+    						<li>Season : <s:property value="canvasRequest.context.environmentContext.version.season"/></li>
     					</ul>
     				</li>
 				</ul>
