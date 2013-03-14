@@ -43,24 +43,7 @@
 	</head>
 <body>
 
-<div id="header">
-	<h2><s:property value="pageName"/></h2>
-	<div id="breadcrumb">
-		<ul>
-			<s:iterator value="breadcrumb" var="crumb" status="stat">
-				<s:if test="#stat.index !=  breadcrumb.size()-1">
-					<li class="middle">
-				</s:if>
-				<s:else>
-					<li>
-				</s:else>
-					<s:url var="url" action="%{#crumb.toLowerCase()}" namespace="/app" />
-					<s:a href="%{#url}"><s:property value="#crumb"/></s:a>
-				</li>
-			</s:iterator>
-		</ul>
-	</div>
-</div>
+<div id="header"></div>
 <div id="mainContainer">
 	<tiles:insertAttribute name="mainContent"/>
 </div>

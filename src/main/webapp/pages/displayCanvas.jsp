@@ -1,8 +1,6 @@
 <%@taglib prefix="s" uri="/struts-tags" %>
-<h2>Display The Signed Request</h2>
 
-Canvas Request:
-<ul>
+<ul class="request">
 	<li>User ID : <s:property value="canvasRequest.userId"/> </li>
 	<li>Signing Algoritm : <s:property value="canvasRequest.algorithm"/></li>
 	<li>Issued At : <s:property value="canvasRequest.issuedAt"/></li>

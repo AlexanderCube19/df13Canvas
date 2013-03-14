@@ -154,3 +154,13 @@ body {
    height: 0; 
    clear: both;
 }
+
+// styles for displaying canvas request
+.request ul {
+	list-style: none;
+	
+}
+
+.request li {
+	
+}
