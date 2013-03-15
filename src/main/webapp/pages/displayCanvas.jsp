@@ -22,7 +22,7 @@ Issued At : <s:property value="canvasRequest.issuedAt"/>
     		<tr><td>User Type</td><td><s:property value="canvasRequest.context.userContext.userType"/></td></tr>
     		<tr><td>Currency ISO Code</td><td><s:property value="canvasRequest.context.userContext.currencyISOCode"/></td></tr>
     		<tr><td>Accessiblity Mode</td><td><s:property value="canvasRequest.context.userContext.accessibilityMode"/></td></tr>
-    		<tr><td>Profile Photo URL</td><td><s:property value="canvasRequest.context.userContext.profilePhotoUrl"/></td></tr>
+    		<tr><td>Profile Photo URL</td><td><s:property value="canvasRequest.context.userContext.profilePhotoUrl"/></td></tr> 
     		<tr><td>Profile Thumbnail URL</td><td><s:property value="canvasRequest.context.userContext.profileThumbnailUrl"/></td></tr>
     	</table>
 	</div>
