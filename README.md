@@ -1,14 +1,12 @@
-# Embedded Jetty template application
+Simple canvas demo application
 
-This is a template for a web application that uses embedded Jetty. The sample code consists of a JSP (this page) and a simple servlet.
+This app creates a database to locally store account details which can be used to display on a Salesforce account page. (/app/home.action)
 
-## Running the application locally
 
-First build with:
+There is also a component that is for display in a visualforce tab that simply decodes and displays information from the Signed Post (/app/display.action)
 
-    $mvn clean install
 
-Then run it with:
+Read the Salesforce Canvas Developers guide to find out how to get canvas running first locally, then on Heroku. http://www.salesforce.com/us/developer/docs/platform_connect/index_Left.htm
 
-    $java -cp target/classes:target/dependency/* com.example.Main
+
 

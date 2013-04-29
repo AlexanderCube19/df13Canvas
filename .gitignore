@@ -1,2 +1,7 @@
-/target
-/target/*
+target
+target/*
+.project
+.DS_Store
+.settings
+data.csv
+keystore
