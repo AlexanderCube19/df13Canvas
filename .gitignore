@@ -5,3 +5,4 @@ target/*
 .settings
 data.csv
 keystore
+.classpath
