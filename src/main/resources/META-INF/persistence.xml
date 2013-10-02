@@ -27,7 +27,7 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
 	version="2.0">
-	<persistence-unit name="com.force.aus.erp.canvas.mainpu">
+	<persistence-unit name="com.force.aus.df13.canvas.mainpu">
 		<non-jta-data-source>jdbc/mainDS</non-jta-data-source>
 		<properties>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect" />

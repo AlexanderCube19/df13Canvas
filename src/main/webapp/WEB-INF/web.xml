@@ -44,7 +44,7 @@
 	</listener>
 	<!-- EntityManagerFactory listener -->
 	<listener>
-		<listener-class>com.force.aus.erp.canvas.listeners.EMFListener</listener-class>
+		<listener-class>com.force.aus.df13.canvas.listeners.EMFListener</listener-class>
 	</listener>
 	<!-- Struts filter (MVC) -->
 	<filter>
@@ -60,7 +60,7 @@
 	<!-- Simple servlet example -->
 	<servlet>
 		<servlet-name>simple-servlet</servlet-name>
-		<servlet-class>com.force.aus.erp.canvas.servlets.SimpleServlet</servlet-class>
+		<servlet-class>com.force.aus.df13.canvas.servlets.SimpleServlet</servlet-class>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 	<servlet-mapping>

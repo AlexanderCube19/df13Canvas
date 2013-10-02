@@ -27,7 +27,7 @@
 
 	<constant name="struts.devMode" value="true" />
 
-	<package name="com.force.aus.erp.canvas.actions" extends="struts-default">
+	<package name="com.force.aus.df13.canvas.actions" extends="struts-default">
 		
 		<result-types>
 			<result-type name="tiles" class="org.apache.struts2.views.tiles.TilesResult" />
@@ -35,7 +35,7 @@
 		
 		<interceptors>
 			<interceptor name="signedRequestInterceptor"
-				class="com.force.aus.erp.canvas.interceptors.SignedRequestInterceptor" />
+				class="com.force.aus.df13.canvas.interceptors.SignedRequestInterceptor" />
 			<interceptor-stack name="defaultInterceptors">
 				<interceptor-ref name="signedRequestInterceptor" />
 				<interceptor-ref name="defaultStack" />
@@ -48,17 +48,17 @@
 			<result name="noSignedRequest">/noSignedRequest.jsp</result>
 		</global-results>
 
-		<action name="home" class="com.force.aus.erp.canvas.actions.HomePageAction"	method="execute">
+		<action name="home" class="com.force.aus.df13.canvas.actions.HomePageAction"	method="execute">
 			<param name="pageName">Home</param>
 			<result name="success" type="tiles">home.tiles</result>
 		</action>
 
-		<action name="search" class="com.force.aus.erp.canvas.actions.GenericAction" method="execute">
+		<action name="search" class="com.force.aus.df13.canvas.actions.GenericAction" method="execute">
 			<param name="pageName">Search</param>
 			<result name="success" type="tiles">search.tiles</result>
 		</action>
 
-		<action name="display" class="com.force.aus.erp.canvas.actions.GenericAction" method="execute">
+		<action name="display" class="com.force.aus.df13.canvas.actions.GenericAction" method="execute">
 			<param name="pageName">Display</param>
 			<result name="success" type="tiles">display.tiles</result>
 		</action>		
